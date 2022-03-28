@@ -1,2 +1,3 @@
 data/*.dump
 analysis/config.py
+analysis/__pycache__
