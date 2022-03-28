@@ -1,0 +1,2 @@
+users,tweets,suspend,deactive,activedays
+7.552.142,52.825.230,58.116,35.024,33
