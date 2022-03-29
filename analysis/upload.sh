@@ -1,4 +1,5 @@
 #!/bin/sh
+date
 cd /media/disk2/RussiaUkraineWar_website/analysis
 git pull
 python3 get_stats.py
