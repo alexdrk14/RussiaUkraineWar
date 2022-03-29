@@ -9,4 +9,4 @@ Web service provide:
 - Daily volume of languages used in posts text
 - Sentiment analysis based on country (Russia/Ukraine) and presidents (Putin/Zelensky) entities
 
-Created by: Alexander Shevtsov shevtsov@csd.uoc.gr
+Created by: Alexander Shevtsov shevtsov@ics.forth.gr
