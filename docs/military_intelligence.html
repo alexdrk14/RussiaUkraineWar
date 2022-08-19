@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parasecurity Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif
+        }
+
+        #shadow {
+            padding: 16px;
+            border-radius: 25px;
+            box-shadow: 5px 10px 14px #888888;
+        }
+
+        .slider, #tweets-slider-wrap {
+            height: auto !important;
+        }
+
+        #arrows-wrap {
+            width: 550px;
+            height: auto !important;
+            top: 45%;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute !important;
+            margin: 0 !important;
+        }
+    </style>
+    <!-- carousel js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+
+    <!-- carousel css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+    <link rel="stylesheet" href="https://codepen.io/jpbrnz/pen/GEVYwR.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
+            class="fa fa-bars"></i>  Menu
+    </button>
+    <span class="w3-bar-item w3-right"><a href="https://www.parasecurity.edu.gr/home">Parasecurity Group</a></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="w3-container">
+        <h5>Dashboard</h5>
+    </div>
+    <div class="w3-bar-block">
+        <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+           onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+        <a href="https://alexdrk14.github.io/RussiaUkraineWar/index.html" class="w3-bar-item w3-button w3-padding"><i
+                class="fa fa-dashboard fa-fw"></i>  Overview</a>
+        <a href="https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html"
+           class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Sentiment</a>
+        <a href="https://alexdrk14.github.io/RussiaUkraineWar/military_intelligence.html"
+           class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+              Military Intelligence</a>
+        <a href="https://alexdrk14.github.io/RussiaUkraineWar/about.html" class="w3-bar-item w3-button w3-padding"><i
+                class="fa fa-info-circle fa-fw"></i>  About</a><br><br>
+    </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+     title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-eye"></i>Military Intelligence</b></h5>
+    </header>
+
+
+    <!-- Line of Volume of Military Tweets -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-twothird">
+            <div id="shadow" class="w3-container w3-white w3-padding-16">
+                <div class="w3-center">
+                    <canvas id="dailyTraffic" class="w3-left"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-container w3-padding-16">
+
+                <div style="width:100%" class="w3-center">
+                    <h3><br><br><br><br>Daily volume and activity of registered users posting tweets with military
+                        context and information
+                        <br><br><br><br></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid carousel-outer mobile-shy fade-me-in">
+        <div class=row>
+            <div id=tweets-slider-wrap>
+                <div id=tweet-carousel>
+                    <section class=slider>
+                        <div class=slides>
+                            <div class=tweet-card>
+                                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In the last couple of weeks, <a
+                                        href="https://twitter.com/hashtag/Russia?src=hash&amp;ref_src=twsrc%5Etfw">#Russia</a>
+                                    concentrated a large amount of armored units (tanks, TOS-1A, etc), VDV force
+                                    remnants (from Kiev op mostly), mercenaries to cut off <a
+                                            href="https://twitter.com/hashtag/Bakhmut?src=hash&amp;ref_src=twsrc%5Etfw">#Bakhmut</a>
+                                    -
+                                    <a href="https://twitter.com/hashtag/Severodonetsk?src=hash&amp;ref_src=twsrc%5Etfw">#Severodonetsk</a>
+                                    highway. <br>They were unsuccessful, but it made UA ops in the area more difficult.
+                                </p>&mdash; Misha Simanovskyy 🇺🇦 🚜 🕯️ (@MSimanovskyy) <a
+                                        href="https://twitter.com/MSimanovskyy/status/1540126213003509762?ref_src=twsrc%5Etfw">June
+                                    24, 2022</a></blockquote>
+                            </div>
+                            <div class=tweet-card>
+                                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">sending messages to <a
+                                        href="https://twitter.com/hashtag/UAF?src=hash&amp;ref_src=twsrc%5Etfw">#UAF</a>
+                                    soldiers on the front in the <a
+                                            href="https://twitter.com/hashtag/Severodonetsk?src=hash&amp;ref_src=twsrc%5Etfw">#Severodonetsk</a>-<a
+                                            href="https://twitter.com/hashtag/Lisichansk?src=hash&amp;ref_src=twsrc%5Etfw">#Lisichansk</a>
+                                    boiler on the radio:<br><br>Short translation:<a
+                                            href="https://twitter.com/hashtag/Zelensky?src=hash&amp;ref_src=twsrc%5Etfw">#Zelensky</a>
+                                    betrayed you like <a
+                                            href="https://twitter.com/hashtag/Azov?src=hash&amp;ref_src=twsrc%5Etfw">#Azov</a><br>There
+                                    will be no help<br>Further resistance will lead to death<br>Only chance to live is
+                                    run or surrender-Save your lives<a
+                                            href="https://twitter.com/hashtag/Russia?src=hash&amp;ref_src=twsrc%5Etfw">#Russia</a>
+                                    <a href="https://t.co/OWXJUvQl5M">pic.twitter.com/OWXJUvQl5M</a></p>&mdash; @Sh..ab
+                                    (@ShehabBawazeer2) <a
+                                            href="https://twitter.com/ShehabBawazeer2/status/1540090002427846658?ref_src=twsrc%5Etfw">June
+                                        23, 2022</a></blockquote>
+                            </div>
+                            <div class=tweet-card>
+                                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The 8th Regiment of the SSO of
+                                    <a href="https://twitter.com/hashtag/Ukraine?src=hash&amp;ref_src=twsrc%5Etfw">#Ukraine</a>
+                                    pulls out a dead soldier during a clash with the Russian Armed Forces in the
+                                    industrial zone of <a
+                                            href="https://twitter.com/hashtag/Severodonetsk?src=hash&amp;ref_src=twsrc%5Etfw">#Severodonetsk</a>.<a
+                                            href="https://twitter.com/hashtag/RussianWarCrimes?src=hash&amp;ref_src=twsrc%5Etfw">#RussianWarCrimes</a>
+                                    <a href="https://twitter.com/hashtag/RussianUkrainianWar?src=hash&amp;ref_src=twsrc%5Etfw">#RussianUkrainianWar</a>
+                                    <a href="https://t.co/SCsCODX55v">pic.twitter.com/SCsCODX55v</a></p>&mdash; News in
+                                    Support of Ukraine (@uasupport999) <a
+                                            href="https://twitter.com/uasupport999/status/1539039593584070658?ref_src=twsrc%5Etfw">June
+                                        21, 2022</a></blockquote>
+                            </div>
+                            <div class=tweet-card>
+                                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">A Russian mortar position was
+                                    located and destroyed by the Ukrainian 3rd Separate Special Regiment of the
+                                    Ukrainian SOF near Severodonetsk, Luhansk Oblast.<a
+                                            href="https://twitter.com/hashtag/Russia?src=hash&amp;ref_src=twsrc%5Etfw">#Russia</a>
+                                    <a href="https://twitter.com/hashtag/Ukraine?src=hash&amp;ref_src=twsrc%5Etfw">#Ukraine</a>
+                                    <a href="https://t.co/kMMAEcVhAz">pic.twitter.com/kMMAEcVhAz</a></p>&mdash;
+                                    BlueSauron👁️ (@Blue_Sauron) <a
+                                            href="https://twitter.com/Blue_Sauron/status/1529886207982940177?ref_src=twsrc%5Etfw">May
+                                        26, 2022</a></blockquote>
+                            </div>
+                        </div>
+                        <div id=arrows-wrap>
+                            <div id=arrows-wrap-inner></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/military_intelligence.csv").then(makeChart);
+
+        function makeChart(data) {
+            var date = data.map(function (d) {
+                return d.created_at;
+            });
+            var daily_users = data.map(function (d) {
+                return d.user_activity;
+            });
+            var daily_tweets = data.map(function (d) {
+                return d.activity;
+            });
+
+            new Chart("dailyTraffic", {
+                type: "line",
+                data: {
+                    labels: date,
+                    datasets: [{
+                        label: "User activity",
+                        data: daily_tweets,
+                        borderColor: "blue",
+                        fill: false
+                    }, {
+                        label: "Active users",
+                        data: daily_users,
+                        borderColor: "red",
+                        fill: false
+                    }
+                    ]
+                },
+                options: {
+                    legend: {display: true},
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+        };
+
+    </script>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <div class="w3-center">
+            <h4>Copyright © Parasecurity Group – All Rights Reserved</h4>
+        </div>
+    </footer>
+
+    <!-- End page content -->
+</div>
+
+<script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    }
+</script>
+
+<script>
+
+    $(window).load(function () {
+        $.getScript("https://platform.twitter.com/widgets.js", function (e, i, o) {
+        }), $(".slides").slick({
+            infinite: !0,
+            autoplay: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: !1,
+            arrows: !0,
+            centerMode: !0,
+            variableWidth: !0,
+            appendArrows: $("#arrows-wrap-inner")
+        }), $(".slick-next, .slick-prev").on("click", function () {
+            $(".slick-next, .slick-prev").hide().delay(500).fadeIn("slow")
+        })
+    }), $(window).width() < 750 && $(".slides").slick({
+        infinite: !0,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: !1,
+        arrows: !1,
+        autoplay: !0,
+        centerMode: !0,
+        centerMode: !0,
+        autoplaySpeed: 5e3
+    });
+
+</script>
+
+</body>
+</html>
