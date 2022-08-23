@@ -27,16 +27,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </div>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br> 
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
 
-  
+
  <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="https://alexdrk14.github.io/RussiaUkraineWar/index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>  Overview</a>
     <a href="https://alexdrk14.github.io/RussiaUkraineWar/sentiment.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Sentiment</a>
+    <a href="https://alexdrk14.github.io/RussiaUkraineWar/military_intelligence.html"
+           class="w3-bar-item w3-button w3-padding"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+              Military Intelligence</a>
     <a href="https://alexdrk14.github.io/RussiaUkraineWar/about.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-info-circle fa-fw"></i>  About</a><br><br>
   </div>
 
@@ -140,9 +143,9 @@ The described hashtags were selected and updated during the first week of the co
           <li>#NATO</li>
           <li>#FuckPutin</li>
           <li>#solidarityWithUkraine</li>
-          <li>#PutinWarCriminal</li> 
+          <li>#PutinWarCriminal</li>
           <li>#PutinHitler</li>
-          <li>#BoycottRussia</li>    
+          <li>#BoycottRussia</li>
           <li>#with_russia</li>
           <li>#FUCK_NATO</li>
         </i></h5></ul></div>
@@ -167,7 +170,7 @@ The described hashtags were selected and updated during the first week of the co
           <li>#СЛАВАВДВ</li>
          </i></h5></ul>
        </div>
-        
+
       </div>
     </div>
   </div>
@@ -180,8 +183,21 @@ The described hashtags were selected and updated during the first week of the co
           <h4>Sentiment Model</h4>
         </div>
         <div class="w3-clear"></div>
-        <h5>Sentiment analysis was applied with a pre-trained multi language XLM-RoBERTa model that allows the use of sentiment analysis for zero-shot classification, with user defined entities. 
+        <h5>Sentiment analysis was applied with a pre-trained multi language XLM-RoBERTa model that allows the use of sentiment analysis for zero-shot classification, with user defined entities.
             Thanks to our GPU implementation, this methodology allows the process of a large amount of data in order to provide the daily sentiment values. For more details please visit this <a href="https://huggingface.co/vicgalle/xlm-roberta-large-xnli-anli">link</a>.</h5>
+      </div>
+    </div>
+  </div>
+
+    <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-single">
+      <div id="shadow", class="w3-container w3-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-fighter-jet w3-xxxlarge" aria-hidden="true"></i></div>
+        <div class="w3-left">
+          <h4>Military Intelligence Pipeline</h4>
+        </div>
+        <div class="w3-clear"></div>
+        <h5>Military Intelligence was gathered with a pre-trained multi language <a href="https://huggingface.co/vicgalle/xlm-roberta-large-xnli-anli">XLM-RoBERTa model</a> for zero-shot classification using the label "military". Furthermore, we applied a custom-trained NER(Named-entity recognition) model, using as a base <a href="https://spacy.io/universe/project/video-spacys-ner-model/">spaCy's NER model</a> and trained with <a href="https://github.com/dstl/re3d">this</a> dataset, to identify entities like Location, Person, Weapon and <a href="https://github.com/dstl/re3d#entity-schema">more</a> and filtered the tweets based on Ukrainian locations.</h5>
       </div>
     </div>
   </div>
@@ -194,8 +210,8 @@ The described hashtags were selected and updated during the first week of the co
             <h4>       Contact</h4>
           </div>
           <div class="w3-clear"></div>
-          <h5><a href="mailto:shevtsov@ics.forth.gr">Email Us</a></h5> 
-          
+          <h5><a href="mailto:shevtsov@ics.forth.gr">Email Us</a></h5>
+
         </div>
       </div>
     </div>
