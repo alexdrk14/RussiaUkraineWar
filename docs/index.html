@@ -246,7 +246,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       });
  };
     
- d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/suspension.csv").then(makeChart1);
+ /*d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/suspension.csv").then(makeChart1);
  function makeChart1(data) {
      var date = data.map(function(d) {return d.date;});
      var deactive = data.map(function(d) {return d.deactive;});
@@ -267,7 +267,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
      }
     });
   };
-
+  */
   d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/daily_stats.csv").then(makeChart2);
   function makeChart2(data) {
       var date = data.map(function(d) {return d.day;});
