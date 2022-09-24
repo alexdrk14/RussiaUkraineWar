@@ -210,7 +210,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     document.getElementById("active_days").innerText = activedays;
 
   };
-  d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/suspension.csv").then(makeChart);
+    
+ d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/suspension.csv").then(makeChart);
  function makeChart(data) {
       var date = data.map(function(d) {return d.date;});
       var suspend = data.map(function(d) {return d.suspend;});
@@ -243,7 +244,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         }
       }
       });
-
+ };
+    
+ d3.csv("https://raw.githubusercontent.com/alexdrk14/RussiaUkraineWar_website/main/data/suspension.csv").then(makeChart1);
+ function makeChart1(data) {
+     var date = data.map(function(d) {return d.date;});
+     var deactive = data.map(function(d) {return d.deactive;});
      new Chart("dailyDeactive", {
      type: "line",
      data: {
