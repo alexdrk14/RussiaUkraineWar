@@ -2,3 +2,4 @@ data/*.dump
 analysis/config.py
 analysis/__pycache__
 analysis/sentiment_logs.txt
+analysis/execute.sh
